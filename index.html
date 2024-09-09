@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleta da Sorte - Farmácia Saúde</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="public/css/wheel.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="csrf-token" content="CSRF_TOKEN_PLACEHOLDER">
+</head>
+
+<body>
+    <h1 class="gamified-title">Roleta da Sorte</h1>
+    
+    <!-- Botão de Retornar -->
+    <div class="back-button-container">
+        <a href="award/index" class="btn">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+
+    <div class="poster-container">
+        <div class="container">            
+            <div class="spinBtn"></div>
+            <div class="wheel">
+                
+                <!-- PHP logic to manage awards and colors is omitted, but here is how it would render -->
+                <div class="number" style="--i:0;--clr:#ff0000;--ang:9;">
+                    <img src="path/to/image1.png" alt="Award Name 1" class="award-image">
+                    <span>Award Name 1</span>
+                </div>
+
+                <div class="number" style="--i:1;--clr:#00ff00;--ang:9;">
+                    <img src="path/to/image2.png" alt="Award Name 2" class="award-image">
+                    <span>Award Name 2</span>
+                </div>
+
+                <!-- Repeat similar blocks for each award -->
+
+            </div>
+            <div class="popup ">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulário oculto -->
+    <form id="awardForm" action="award/updateQuantity" method="POST" style="display:none;">
+        <input type="hidden" name="award_name" id="selected_award" value="">
+        <input type="hidden" name="movement_id" value="MOVEMENT_ID_PLACEHOLDER">
+        <input type="hidden" name="raffle_number" value="RAFFLE_NUMBER_PLACEHOLDER">
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- PHP logic that throws an exception omitted -->
+
+    <script>
+        let totalItems = 9;        
+        let customer_name = "CUSTOMER_NAME_PLACEHOLDER";
+    </script>
+</body>
+
+<script src="public/js/wheel/wheel.js"></script>
+
+</html>
